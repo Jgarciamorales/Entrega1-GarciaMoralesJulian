@@ -15,8 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from blog.views import (
+    inicio,
+    autor,
+    articulo,
+    seccion,
+    cargarArticulo,
+    cargarAutor,
+    cargarSeccion,
+)
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("blog/", include("blog.urls")),
+    path("inicio/", inicio, name="inicio"),
+    path("autor/", autor, name="autor"),
+    path("articulo/", articulo, name="articulo"),
+    path("seccion/", seccion, name="seccion"),
+    path("cargarAutor/", cargarAutor, name="cargarAutor"),
+    path("cargarArticulo/", cargarArticulo, name="cargarArticulo"),
+    path("cargarSeccion/", cargarSeccion, name="cargarSeccion"),
 ]

@@ -20,7 +20,6 @@ class Articulo(models.Model):
 
     titulo = models.CharField(max_length=30)
     texto = models.CharField(max_length=1000)
-    fecha = models.DateField(null=True)
 
 
 class Seccion(models.Model):
