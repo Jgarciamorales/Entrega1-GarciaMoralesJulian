@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from blog.forms import formAutor, formArticulo, formSeccion
 from blog.models import *
 
@@ -41,11 +42,11 @@ def cargarArticulo(request):
 
             articulo.save()
 
-            return render(request, "blog/inicio.html")
+            return render(request, "blog/padre.html")
 
     else:
 
-        miFormulario = formAutor()
+        miFormulario = formArticulo()
 
     return render(request, "blog/cargarArticulo.html", {"miFormulario": miFormulario})
 
@@ -68,7 +69,7 @@ def cargarAutor(request):
 
             autor.save()
 
-            return render(request, "blog/inicio.html")
+            return render(request, "blog/padre.html")
 
     else:
 
@@ -91,10 +92,29 @@ def cargarSeccion(request):
 
             seccion.save()
 
-            return render(request, "blog/inicio.html")
+            return render(request, "blog/padre.html")
 
     else:
 
-        miFormulario = formAutor()
+        miFormulario = formSeccion()
 
     return render(request, "blog/cargarSeccion.html", {"miFormulario": miFormulario})
+
+
+def busqueda(request):
+    return render(request, "blog/busqueda.html")
+
+
+def buscar(request):
+
+    if request.GET["autor"]:
+
+        nombre = request.GET["autor"]
+        autores = Autor.objects.filter(nombre__icontains=nombre)
+        contexto = {"autores": autores, "nombre": nombre}
+
+        return render(request, "blog/resultadoBusquedaAutor.html", contexto)
+
+    else:
+        respuesta = "no enviaste datos"
+        return HttpResponse(respuesta)

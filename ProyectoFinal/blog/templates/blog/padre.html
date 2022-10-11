@@ -12,18 +12,21 @@
 
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-            <a class="navbar-brand" href="{% url 'autor' %}">Autores</a>
-            <a class="navbar-brand" href="{% url 'seccion' %}">Secciones</a>
-            <a class="navbar-brand" href="{% url 'articulo' %}">Articulos</a>
-            <a class="navbar-brand" href="{% url 'cargarAutor' %}">Cargar Autor</a>
-            <a class="navbar-brand" href="{% url 'cargarArticulo' %}">Cargar Articulo</a>
-            <a class="navbar-brand" href="{% url 'cargarSeccion' %}">Cargar seccion</a>
+            <h3><a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>/
+            <a class="navbar-brand" href="{% url 'autor' %}">Autores</a>/
+            <a class="navbar-brand" href="{% url 'seccion' %}">Secciones</a>/
+            <a class="navbar-brand" href="{% url 'articulo' %}">Articulos</a>/
+            <a class="navbar-brand" href="{% url 'cargarAutor' %}">Cargar Autor</a>/
+            <a class="navbar-brand" href="{% url 'cargarArticulo' %}">Cargar Articulo</a>/
+            <a class="navbar-brand" href="{% url 'cargarSeccion' %}">Cargar seccion</a>/
+            <br>
+            <a class="navbar-brand" href="{% url 'busqueda' %}">Buscar autor</a></h3>
             
         </div>
     </nav>
 
     {% block contenidoCambia %}
+
     {% endblock %}
 
     <h3> Aplicacion : blog <h3>

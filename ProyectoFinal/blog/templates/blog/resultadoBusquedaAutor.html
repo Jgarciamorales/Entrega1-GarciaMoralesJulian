@@ -1,0 +1,23 @@
+{% extends "blog/padre.html" %}
+
+    {% load static %}
+
+    {% block contenidoCambia %}
+    
+    <p>Estamos buscando el autor : {{nombre}}</p>
+
+    {% if autores %}
+    
+    <ul>
+        {% for autor in autores %}
+        <li>{{autor.nombre}} {{autor.apellido}}</li>
+        {% endfor %}
+    <ul>
+    {% endif %}
+
+    {% endblock %}
+
+
+
+
+

@@ -23,6 +23,8 @@ from blog.views import (
     cargarArticulo,
     cargarAutor,
     cargarSeccion,
+    buscar,
+    busqueda,
 )
 
 urlpatterns = [
@@ -33,4 +35,6 @@ urlpatterns = [
     path("cargarAutor/", cargarAutor, name="cargarAutor"),
     path("cargarArticulo/", cargarArticulo, name="cargarArticulo"),
     path("cargarSeccion/", cargarSeccion, name="cargarSeccion"),
+    path("busqueda/", busqueda, name="busqueda"),
+    path("buscar/", buscar),
 ]
