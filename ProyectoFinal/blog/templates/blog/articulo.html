@@ -12,7 +12,15 @@
     {% load static %}
 
     {% block contenidoCambia %}
-     Articulos
+
+     <h1>Articulos</h1>
+        
+     {% for articulo in articulos %}
+         
+     <h3><li>Titulo: {{articulo.titulo}} Contenido: {{articulo.texto}}</li></h3>
+     
+     {% endfor %}
+     
     {% endblock %}
     
 </body>

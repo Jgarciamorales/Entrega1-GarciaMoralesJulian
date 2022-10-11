@@ -13,7 +13,15 @@
     {% load static %}
 
     {% block contenidoCambia %}
-      Secciones
+    
+      <h1>Secciones</h1>
+        
+      {% for seccion in secciones%}
+          
+      <h3><li>{{seccion.nombre}}</li></h3>
+      
+      {% endfor %}
+      
     {% endblock %}
     
 </body>

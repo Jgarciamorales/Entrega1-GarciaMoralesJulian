@@ -12,7 +12,14 @@
     {% load static %}
 
     {% block contenidoCambia %}
-        Autores
+        <h1>Autores</h1>
+        
+        {% for autor in autores%}
+            
+        <h3><li>{{autor.nombre}} {{autor.apellido}}</li></h3>
+        
+        {% endfor %}
+        
     {% endblock %}
     
 </body>

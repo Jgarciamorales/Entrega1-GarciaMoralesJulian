@@ -13,17 +13,24 @@ def inicio(request):
 
 def articulo(request):
 
-    return render(request, "blog/articulo.html")
+    articulos = Articulo.objects.all()
+    contexto = {"articulos": articulos}
+    return render(request, "blog/articulo.html", contexto)
 
 
 def autor(request):
 
-    return render(request, "blog/autor.html")
+    autores = Autor.objects.all()
+    contexto = {"autores": autores}
+
+    return render(request, "blog/autor.html", contexto)
 
 
 def seccion(request):
 
-    return render(request, "blog/seccion.html")
+    secciones = Seccion.objects.all()
+    contexto = {"secciones": secciones}
+    return render(request, "blog/seccion.html", contexto)
 
 
 def cargarArticulo(request):
